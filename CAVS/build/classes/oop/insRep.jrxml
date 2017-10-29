@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2542fbaa-917d-4190-93f8-b1e6c2dc552a">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select * from Brand as a
+INNER JOIN Instock as b on a.brandID = b.instockID;]]>
+	</queryString>
+	<field name="brandID" class="java.lang.Object"/>
+	<field name="brand_name" class="java.lang.Object"/>
+	<field name="category" class="java.lang.Object"/>
+	<field name="original_price" class="java.lang.Object"/>
+	<field name="description" class="java.lang.Object"/>
+	<field name="instockID" class="java.lang.Object"/>
+	<field name="quantity" class="java.lang.Object"/>
+	<field name="product_name" class="java.lang.Object"/>
+	<field name="date_receive" class="java.lang.Object"/>
+	<field name="supplier_company" class="java.lang.Object"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="79" backcolor="#9999FF" uuid="621e46a5-2db9-4953-8f78-a88d1670d10e"/>
+				<frame>
+					<reportElement mode="Opaque" x="31" y="13" width="501" height="53" forecolor="#FFFFFF" backcolor="#CCCCFF" uuid="b8b589ac-1a51-46ae-acf4-c964454ad922"/>
+					<staticText>
+						<reportElement mode="Transparent" x="81" y="5" width="406" height="48" backcolor="#9999FF" uuid="43b661c2-76f7-4aed-8efb-8f8242c467e2"/>
+						<textElement>
+							<font fontName="Rockwell" size="36" isBold="true"/>
+						</textElement>
+						<text><![CDATA[Josh Agrivet Supply]]></text>
+					</staticText>
+				</frame>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="35" backcolor="#CCCCFF" uuid="39159201-bef8-430b-a399-66cef462f207"/>
+			</frame>
+			<staticText>
+				<reportElement x="195" y="7" width="192" height="20" uuid="b140c514-eb15-4f2a-82bb-a119aa0ab858"/>
+				<textElement>
+					<font fontName="Bookman Old Style" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SUMMARY of INSTOCKS]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="35" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="35" backcolor="#9999FF" uuid="8d759f45-173f-4945-ae38-dcc48c7cec0e"/>
+			</frame>
+			<staticText>
+				<reportElement x="12" y="11" width="70" height="20" uuid="2650f7ad-a1b8-488c-84ec-9823109b0793"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Product Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="108" y="11" width="45" height="20" uuid="a5ab0a62-720f-4953-b251-15c34f975479"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quantity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="174" y="11" width="66" height="20" uuid="3cc92fe6-2027-4c09-a084-22e526deeb33"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date Recieve]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="269" y="11" width="100" height="20" uuid="ed428388-9a50-4c1c-843e-75823b6a5346"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Supplier Company]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="388" y="11" width="60" height="20" uuid="d51950ea-e401-46cc-ab04-3160dbe7a183"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Brand Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="486" y="11" width="46" height="20" uuid="76c16d02-4f5d-46a9-afaf-6a86ae7527e8"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Price]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="36" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="36" backcolor="#CCCCFF" uuid="53df6f4b-f43b-418c-a279-6f31af430a27"/>
+			</frame>
+			<textField>
+				<reportElement x="12" y="4" width="70" height="20" uuid="6ead135b-9197-4f8d-ba4d-9d4d10fbb0e2"/>
+				<textFieldExpression><![CDATA[$F{product_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="112" y="4" width="27" height="20" uuid="13c93ec0-c18b-4a1a-976a-b1aecd2d28a8"/>
+				<textFieldExpression><![CDATA[$F{quantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="187" y="5" width="43" height="20" uuid="2868e26a-ab67-47ac-814e-6158e1c23237"/>
+				<textFieldExpression><![CDATA[$F{date_receive}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="269" y="5" width="100" height="20" uuid="7ae5265d-456b-469a-a764-009f83d1dc69"/>
+				<textFieldExpression><![CDATA[$F{supplier_company}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="388" y="5" width="60" height="20" uuid="d90f3527-863b-4383-95a9-6496fa745ccb"/>
+				<textFieldExpression><![CDATA[$F{brand_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="486" y="4" width="69" height="20" uuid="4c64404c-f5c1-4012-b459-7d8a25afe3df"/>
+				<textFieldExpression><![CDATA[$F{original_price}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement x="478" y="34" width="77" height="20" uuid="0c55f006-308b-44a3-893d-c8391d2d4dd2"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[-CALVZ]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
